@@ -1,4 +1,8 @@
 {
+    "name": "journey/cache",
+    "description": "A simpler string cache interface than PSR-6.",
+    "keywords": ["cache", "memcached"],
+    "homepage": "http://github.com/journeygroup/fermi",
     "require": {
         "phpunit/phpunit": "5.5.*"
     },
