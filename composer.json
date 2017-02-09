@@ -1,0 +1,11 @@
+{
+    "require": {
+        "phpunit/phpunit": "5.5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Journey\\Cache\\": "src/",
+            "Tests\\": "tests/"
+        }
+    }
+}
