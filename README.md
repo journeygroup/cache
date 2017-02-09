@@ -1,16 +1,18 @@
 Journey Cache
 -------------
+[![Build Status](https://travis-ci.org/journeygroup/cache.svg?branch=master)](https://travis-ci.org/journeygroup/cache)
+[![Code Coverage](https://scrutinizer-ci.com/g/journeygroup/cache/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/journeygroup/cache/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/journeygroup/cache/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/journeygroup/cache/?branch=master)
 
 ## What
 
 Journey cache is a very simple string caching interface. It is a much simpler
-alternative to the PSR-6 interface, and only useful for basic string cache.
-The interface comes bundled with a local file cache (LocalAdapter) and a 
-memcached (MemcachedAdapter) implementation.
+alternative to the PSR-6 interface, and mostly useful for basic string cache.
+The interface comes bundled with a local file cache 
+([LocalAdapter](/src/Adapters/LocalAdapter.php)) and a memcached 
+([MemcachedAdapter](/src/Adapters/LocalAdapter.php)) implementation.
 
 ## Interface
-
-The interface is incredibly simple:
 
 ```php
 interface CacheAdapterInterface

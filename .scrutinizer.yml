@@ -1,9 +1,16 @@
 build:
   environment:
     php:
-      version: 5.6.0
+      version: 5.5.0
       ini:
         'date.timezone': 'America/New_York'
+    variables:
+        APP_ENVIRONMENT: 'test'
+  dependencies:
+    before:
+       - 'sudo apt-get update'
+       - 'sudo apt-get --assume-yes install php5-memcached memcached libmemcached-dev'
+       - 'sudo service memcached start'
   tests:
     override:
       -
