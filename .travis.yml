@@ -1,8 +1,8 @@
 language: php
-
 php:
-    - 5.5
-    - 7.0
-
+  - 5.5
+services:
+  - memcached
+before_install: echo "extension = memcached.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 install:
-    - composer install
+  - composer install
