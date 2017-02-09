@@ -4,7 +4,7 @@ namespace Tests;
 
 use Journey\Cache\CacheAdapterInterface;
 use Journey\Cache\CacheException;
-use Journey\Cache\LocalAdapter;
+use Journey\Cache\Adapters\LocalAdapter;
 use PHPUnit\Framework\TestCase;
 
 class LocalCache extends TestCase

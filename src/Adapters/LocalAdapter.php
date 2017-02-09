@@ -1,6 +1,6 @@
 <?php
 
-namespace Journey\Cache;
+namespace Journey\Cache\Adapters;
 
 use Journey\Cache\CacheAdapterInterface;
 use Journey\Cache\CacheException;
