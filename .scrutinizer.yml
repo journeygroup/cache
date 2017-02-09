@@ -23,3 +23,7 @@ filter:
     - "tests/"
     - "build/"
     - "vendor/"
+checks:
+  php:
+    code_rating: true
+    duplication: true
