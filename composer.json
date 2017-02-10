@@ -1,10 +1,10 @@
 {
     "name": "journey/cache",
     "description": "A simpler string cache interface than PSR-6.",
-    "authors": {
+    "authors": [{
         "name": "Justin Schroeder",
         "homepage": "http://www.jpschroeder.com"
-    },
+    }],
     "keywords": ["cache", "memcached"],
     "homepage": "http://github.com/journeygroup/fermi",
     "license": "MIT",
