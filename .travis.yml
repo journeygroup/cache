@@ -6,3 +6,5 @@ services:
 before_install: echo "extension = memcached.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 install:
   - composer install
+script:
+  - vendor/bin/phpunit

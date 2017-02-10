@@ -1,16 +1,22 @@
 {
     "name": "journey/cache",
     "description": "A simpler string cache interface than PSR-6.",
+    "authors": {
+        "name": "Justin Schroeder",
+        "homepage": "http://www.jpschroeder.com"
+    },
     "keywords": ["cache", "memcached"],
     "homepage": "http://github.com/journeygroup/fermi",
     "license": "MIT",
     "require": {
-        "phpunit/phpunit": "^5.7"
     },
     "autoload": {
         "psr-4": {
             "Journey\\Cache\\": "src/",
             "Tests\\": "tests/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
     }
 }
