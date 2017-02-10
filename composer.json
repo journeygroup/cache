@@ -5,7 +5,7 @@
     "homepage": "http://github.com/journeygroup/fermi",
     "license": "MIT",
     "require": {
-        "phpunit/phpunit": "5.6.*"
+        "phpunit/phpunit": "^5.7"
     },
     "autoload": {
         "psr-4": {
