@@ -15,6 +15,13 @@ class LocalAdapter implements CacheAdapterInterface
     protected $path;
 
     /**
+     * umask value to set on cache files.
+     *
+     * @var integer
+     */
+    protected $umask = 000;
+
+    /**
      * Initialize a new localcache.
      *
      * @param string $filepath
@@ -37,7 +44,9 @@ class LocalAdapter implements CacheAdapterInterface
     public function set($key, $value, $expiration = false)
     {
         $path = $this->filename($key);
+        $umask = umask($this->umask);
         file_put_contents($path, $this->createValue($value, $expiration));
+        umask($umask);
         return $this;
     }
 
@@ -148,7 +157,9 @@ class LocalAdapter implements CacheAdapterInterface
     {
         $path = $this->path . "/.cache_key";
         $key = bin2hex(openssl_random_pseudo_bytes(6));
+        $umask = umask($this->umask);
         file_put_contents($path, $key);
+        umask($umask);
         return $key;
     }
 }

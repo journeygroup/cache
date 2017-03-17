@@ -107,5 +107,21 @@ class LocalCache extends TestCase
             . 'that is all.';
         $this->adapter->set($key, "uY,QtA}EhXaGvh93PaB");
         $this->assertEquals($this->adapter->get($key), 'uY,QtA}EhXaGvh93PaB');
+        $this->adapter->clear();
+    }
+
+    /**
+     * Test the permissions of the local cache (should be wide open 777).
+     *
+     * @return void
+     */
+    public function testCachePermissions()
+    {
+        $this->adapter->set('key', 'value');
+        $key = $this->adapter->key();
+        $files = glob("/tmp/_cache-" . $key . "*.cache");
+        $permissions = decoct(fileperms($files[0]) & 0777);
+        $this->assertEquals(666, $permissions);
+        $this->adapter->clear();
     }
 }
