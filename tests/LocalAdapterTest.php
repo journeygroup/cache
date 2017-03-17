@@ -93,4 +93,19 @@ class LocalCache extends TestCase
         $this->expectException(CacheException::class);
         new LocalAdapter('/tmp/' . bin2hex(openssl_random_pseudo_bytes(16)));
     }
+
+    /**
+     * Test some crazy directory characters.
+     *
+     * @return void
+     */
+    public function testDirectoryCharacters()
+    {
+        $key = '/$this/.string/>slashes=with.{file}/.extensions*.php%20/ andswers`here`||and&&itslonger'
+            . "\nthan 255 characters, which is the max # of characers for a file name length"
+            . 'also there may be some "issues"/"problems" with these kinds of keys. But not here!!||˙here˙or`here`'
+            . 'that is all.';
+        $this->adapter->set($key, "uY,QtA}EhXaGvh93PaB");
+        $this->assertEquals($this->adapter->get($key), 'uY,QtA}EhXaGvh93PaB');
+    }
 }

@@ -100,7 +100,7 @@ class LocalAdapter implements CacheAdapterInterface
      */
     public function filename($key)
     {
-        return $this->path . "/_cache-" . $this->key() . "-" . $key . ".cache";
+        return $this->path . "/_cache-" . $this->key() . "-" . md5($key) . ".cache";
     }
 
     /**
